@@ -1,10 +1,9 @@
-
-
 public class Produto {
-    public String descrisao;
-    public int id;
-    public double value;
-    public int quantidade;
+
+    private String descrisao;
+    private int id;
+    private double value;
+    private int quantidade;
 
 public Produto( String description,int id, double valor, int qntd){
     this.descrisao = description ;
@@ -16,20 +15,36 @@ public Produto( String description,int id, double valor, int qntd){
 public String getdescription(){
     return descrisao;
 }
-public String setdescription(String descrisao){
+
+void String setdescription(String descrisao){
     this.descrisao = description;
 }
+
 public int getid(){
     return id;
+}
+
+void int setid(int id){
+    this.id = id;
 }
 
 public double getvalue(){
     return value;
 }
 
+void double setvalue(double valor){
+    this.value = valor;
+}
 
 public int getqntd(){
     return quantidade;
 }
+
+void int setqntd(int qntd){
+    this.quantidade = qntd;
+}
+
+
+
 }
 
