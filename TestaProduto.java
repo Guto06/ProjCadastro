@@ -1,24 +1,26 @@
 import java.time.LocalDate;
 import java.util.Scanner;
 
-public class ComparacaoDeDatas {
+public class TestaProduto {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+int opcao;
+
 do {
             System.out.print(" \n\n ============== Menu ============\n");
-            System.out.println("[1] Criar produto");
-            System.out.println("\n[2] Criar produto perecível");
-            System.out.println("\n[3] Sair");
-            System.out.print("Escolha uma opção: ");
+            System.out.println(" [1] Criar produto");
+            System.out.println("\n [2] Criar produto perecível");
+            System.out.println("\n [3] Sair");
+            System.out.print("\n Escolha uma opção: ");
             opcao = scanner.nextInt();
 
             switch (opcao) {
                 case 1:
                     scanner.nextLine(); // Limpar o buffer
-                    System.out.print("Digite o nome do produto: ");
+                    System.out.print("\n Digite o nome do produto: ");
                     String nomeProduto = scanner.nextLine();
-                    System.out.print("Digite o preço do produto: R$");
+                    System.out.print("\n Digite o preço do produto: R$");
                     double precoProduto = scanner.nextDouble();
 
                     Produto produto = new Produto(nomeProduto, precoProduto);
@@ -43,30 +45,31 @@ do {
         scanner.close();
 
         if (data1.isBefore(data2)) {
-            System.out.println("A primeira data ocorre antes da segunda data");
+            System.out.println("\n A primeira data ocorre antes da segunda data");
         } else if (data1.isAfter(data2)) {
-            System.out.println("A primeira data ocorre depois da segunda data");
+            System.out.println("\n A primeira data ocorre depois da segunda data");
         } else {
             System.out.println("As datas são iguais");
 
-                    ProdutoPerecivel produtoPerecivel = new ProdutoPerecivel(nomeProdutoPerecivel, precoProdutoPerecivel, dataValidade);
+                    Perecivel produtoPerecivel = new Perecivel(nomeProdutoPerecivel, precoProdutoPerecivel);
                     produtoPerecivel.imprimirDados();
                     produtoPerecivel.verificarValidade();
                     produtoPerecivel.aplicarDesconto();
                     produtoPerecivel.imprimirDados();
                     break;
+        }
 
                 case 3:
-                    System.out.println("Programa encerrado.");
+                    System.out.println("\n Programa encerrado.");
                     break;
 
                 default:
-                    System.out.println("Opção inválida. Por favor, escolha uma opção válida.");
-            }
-        } while (opcao != 3);
+                    System.out.println("\n Opção inválida. Por favor, escolha uma opção válida.");
+
+        } 
 
         scanner.close();
-    }
+    }while (opcao != 3);
 }
        
         }

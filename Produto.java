@@ -3,20 +3,21 @@ public class Produto {
     private String descrisao;
     private int id;
     private double value;
-    private int quantidade;
+    private static int quantidade = 0;
 
-public Produto( String description,int id, double valor, int qntd){
-    this.descrisao = description ;
-    this.id=id;
-    this.value= valor;
-    this.quantidade=qntd;
+public Produto(String new_desct, double new_valor){
+
+    this.descrisao = new_desct ;
+    this.value= new_valor;
+    quantidade ++;
+    this.id = quantidade;
 
 }
 public String getdescription(){
     return descrisao;
 }
 
-void String setdescription(String descrisao){
+public void setdescrisao(String description){
     this.descrisao = description;
 }
 
@@ -24,7 +25,7 @@ public int getid(){
     return id;
 }
 
-void int setid(int id){
+public void setid(int id){
     this.id = id;
 }
 
@@ -32,19 +33,16 @@ public double getvalue(){
     return value;
 }
 
-void double setvalue(double valor){
+public void setvalue(double valor){
     this.value = valor;
 }
 
 public int getqntd(){
     return quantidade;
 }
-
-void int setqntd(int qntd){
-    this.quantidade = qntd;
+public void imprimirDados() {
+    
 }
-
-
 
 }
 
