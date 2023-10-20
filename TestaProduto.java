@@ -36,11 +36,11 @@ public class TestaProduto {
                     double precoProdutoPerecivel = scanner.nextDouble();
                     scanner.nextLine(); // Limpar o buffer
 
-                    System.out.print("Digite a primeira data (AAAA-MM-DD): ");
+                    System.out.print("Digite a primeira data (AAAA-MM-DD)(Input com os traços é necessário): ");//Os traços são necessarios para que a data seja lida
                     String data1Input = scanner.nextLine();
                     LocalDate data1 = LocalDate.parse(data1Input);
 
-                    System.out.print("Digite a segunda data (AAAA-MM-DD): ");
+                    System.out.print("Digite a segunda data (AAAA-MM-DD)(Input com os traços é necessário): ");
                     String data2Input = scanner.nextLine();
                     LocalDate data2 = LocalDate.parse(data2Input);
 
