@@ -1,3 +1,5 @@
+import java.text.DecimalFormat;
+
 public class Produto {
     private String descricao;
     private int id;
@@ -7,8 +9,8 @@ public class Produto {
     public Produto(String new_descricao, double new_valor) {
         this.descricao = new_descricao;
         this.valor = new_valor;
-        quantidade++;
-        this.id = quantidade;
+        quantidade++; // aumenta a quantidade de produtos conforme eles forem criados
+        this.id = quantidade;  // o ID do produto será o seu número de criação
     }
 
     public String getDescricao() {
@@ -35,13 +37,15 @@ public class Produto {
         this.valor = valor;
     }
 
-    public static int getQuantidade() {
+    public static int getQntd() {
         return quantidade;
     }
 
+    // imprime os dados do produto
     public void imprimirDados() {
+        DecimalFormat df = new DecimalFormat("#.00"); // Padrão para duas casas decimais
         System.out.println("\nNome do produto: " + this.descricao);
-        System.out.println("Valor: R$" + this.valor);
+        System.out.println("Valor: R$" + df.format(this.valor));
         System.out.println("ID: " + this.id);
     }
 

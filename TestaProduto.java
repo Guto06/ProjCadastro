@@ -23,9 +23,10 @@ public class TestaProduto {
                     System.out.print("Digite o preço do produto: R$");
                     double precoProduto = scanner.nextDouble();
                     
+                    // utiliza os dados fornecidos pelo usuário ao produto novo
                     Produto produto = new Produto(nomeProduto, precoProduto);
                     produto.imprimirDados();
-                    System.out.println("\nQuantidade de produtos criados: " + Produto.getQuantidade());
+                    System.out.println("\nQuantidade de produtos criados: " + Produto.getQntd());
                     break;
 
                 case 2:
@@ -42,13 +43,14 @@ public class TestaProduto {
                     System.out.print("Ano da validade: ");
                     int ano = scanner.nextInt();
 
+                     // utiliza os dados fornecidos pelo usuário ao produto novo perecível
                     Perecivel produtoPerecivel = new Perecivel(PerecivelNome, PerecivelValor, dia, mes, ano);
 
                     produtoPerecivel.imprimirDados();
-                    produtoPerecivel.estaVencido();
-                    produtoPerecivel.aplicarDesconto();
+                    produtoPerecivel.estaVencido();  // chama a função para conferir se esta vencido
+                    produtoPerecivel.aplicarDesconto(); // se estiver vencido, ele adiciona o desconto ao valor do produto
                     if(!produtoPerecivel.estaVencido()){
-                    produtoPerecivel.imprimirDados();
+                    produtoPerecivel.imprimirDados();  // se não esta vencido, imprime os dados novamente com o novo valor
                     }
                     
                     break; 
