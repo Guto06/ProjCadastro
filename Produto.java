@@ -1,48 +1,48 @@
 public class Produto {
-
-    private String descrisao;
+    private String descricao;
     private int id;
-    private double value;
+    private double valor;
     private static int quantidade = 0;
 
-public Produto(String new_desct, double new_valor){
+    public Produto(String new_descricao, double new_valor) {
+        this.descricao = new_descricao;
+        this.valor = new_valor;
+        quantidade++;
+        this.id = quantidade;
+    }
 
-    this.descrisao = new_desct ;
-    this.value= new_valor;
-    quantidade ++;
-    this.id = quantidade;
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public double getValor() {
+        return valor;
+    }
+
+    public void setValor(double valor) {
+        this.valor = valor;
+    }
+
+    public static int getqntd() {
+        return quantidade;
+    }
+
+    public void imprimirDados() {
+        System.out.println("\nNome do produto: " + this.descricao);
+        System.out.println("Valor: " + this.valor);
+        System.out.println("ID: " + this.id);
+    }
 
 }
-public String getdescription(){
-    return descrisao;
-}
-
-public void setdescrisao(String description){
-    this.descrisao = description;
-}
-
-public int getid(){
-    return id;
-}
-
-public void setid(int id){
-    this.id = id;
-}
-
-public double getvalue(){
-    return value;
-}
-
-public void setvalue(double valor){
-    this.value = valor;
-}
-
-public int getqntd(){
-    return quantidade;
-}
-public void imprimirDados() {
-    
-}
-
-}
-

@@ -8,7 +8,7 @@ public class TestaProduto {
         int opcao;
 
         do {
-            System.out.print("\n\n============= Menu ============\n");
+            System.out.print("\n============= Menu ============\n");
             System.out.println("[1] Criar produto");
             System.out.println("[2] Criar produto perecível");
             System.out.println("[3] Sair");
@@ -22,9 +22,10 @@ public class TestaProduto {
                     String nomeProduto = scanner.nextLine();
                     System.out.print("Digite o preço do produto: R$");
                     double precoProduto = scanner.nextDouble();
-
+                    
                     Produto produto = new Produto(nomeProduto, precoProduto);
                     produto.imprimirDados();
+                    System.out.println("\nQuantidade de produtos criados: " + Produto.getqntd());
                     break;
 
                 case 2:
@@ -51,12 +52,12 @@ public class TestaProduto {
                         System.out.println("\nAs datas são iguais");
                     }
 
-                    Perecivel produtoPerecivel = new Perecivel(nomeProdutoPerecivel, precoProdutoPerecivel);
-                    produtoPerecivel.imprimirDados();
+                    // Perecivel produtoPerecivel = new Perecivel(nomeProdutoPerecivel, precoProdutoPerecivel);
+                   /*produtoPerecivel.imprimirDados();
                     produtoPerecivel.verificarValidade();
                     produtoPerecivel.aplicarDesconto();
                     produtoPerecivel.imprimirDados();
-                    break;
+                    break; */ 
 
                 case 3:
                     System.out.println("\nPrograma encerrado.");
