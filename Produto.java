@@ -35,13 +35,13 @@ public class Produto {
         this.valor = valor;
     }
 
-    public static int getqntd() {
+    public static int getQuantidade() {
         return quantidade;
     }
 
     public void imprimirDados() {
         System.out.println("\nNome do produto: " + this.descricao);
-        System.out.println("Valor: " + this.valor);
+        System.out.println("Valor: R$" + this.valor);
         System.out.println("ID: " + this.id);
     }
 

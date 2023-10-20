@@ -1,4 +1,4 @@
-import java.time.LocalDate;
+// import java.time.LocalDate;
 import java.util.Scanner;
 
 public class TestaProduto {
@@ -25,42 +25,36 @@ public class TestaProduto {
                     
                     Produto produto = new Produto(nomeProduto, precoProduto);
                     produto.imprimirDados();
-                    System.out.println("\nQuantidade de produtos criados: " + Produto.getqntd());
+                    System.out.println("\nQuantidade de produtos criados: " + Produto.getQuantidade());
                     break;
 
                 case 2:
                     scanner.nextLine(); // Limpar o buffer
-                    System.out.print("Digite o nome do produto perecível: ");
-                    String nomeProdutoPerecivel = scanner.nextLine();
-                    System.out.print("Digite o preço do produto perecível: R$");
-                    double precoProdutoPerecivel = scanner.nextDouble();
-                    scanner.nextLine(); // Limpar o buffer
 
-                    System.out.print("Digite a primeira data (AAAA-MM-DD): ");
-                    String data1Input = scanner.nextLine();
-                    LocalDate data1 = LocalDate.parse(data1Input);
+                    System.out.print("\nDigite o nome do produto: ");
+                    String PerecivelNome = scanner.nextLine();
+                    System.out.print("Preço do produto: R$");
+                    double PerecivelValor = scanner.nextDouble();
+                    System.out.print("Dia da validade: ");
+                    int dia = scanner.nextInt();
+                    System.out.print("Mês da validade: ");
+                    int mes = scanner.nextInt();
+                    System.out.print("Ano da validade: ");
+                    int ano = scanner.nextInt();
 
-                    System.out.print("Digite a segunda data (AAAA-MM-DD): ");
-                    String data2Input = scanner.nextLine();
-                    LocalDate data2 = LocalDate.parse(data2Input);
+                    Perecivel produtoPerecivel = new Perecivel(PerecivelNome, PerecivelValor, dia, mes, ano);
 
-                    if (data1.isBefore(data2)) {
-                        System.out.println("\nA primeira data ocorre antes da segunda data");
-                    } else if (data1.isAfter(data2)) {
-                        System.out.println("\nA primeira data ocorre depois da segunda data");
-                    } else {
-                        System.out.println("\nAs datas são iguais");
-                    }
-
-                    // Perecivel produtoPerecivel = new Perecivel(nomeProdutoPerecivel, precoProdutoPerecivel);
-                   /*produtoPerecivel.imprimirDados();
-                    produtoPerecivel.verificarValidade();
-                    produtoPerecivel.aplicarDesconto();
                     produtoPerecivel.imprimirDados();
-                    break; */ 
+                    produtoPerecivel.estaVencido();
+                    produtoPerecivel.aplicarDesconto();
+                    if(!produtoPerecivel.estaVencido()){
+                    produtoPerecivel.imprimirDados();
+                    }
+                    
+                    break; 
 
                 case 3:
-                    System.out.println("\nPrograma encerrado.");
+                    System.out.println("\nPrograma encerrado.\n ");
                     break;
 
                 default:

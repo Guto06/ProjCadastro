@@ -1,7 +1,3 @@
-//import java.util.Scanner;
-//import java.util.Arrays;
-// import javax.management.modelmbean.DescriptorSupport;
-
 import java.time.LocalDate;
 
 public class Perecivel extends Produto {
@@ -32,5 +28,28 @@ public class Perecivel extends Produto {
         }
 
         return false;
+    }
+
+    public void imprimirDados() {
+        super.imprimirDados(); // Chama o método imprimirDados da superclasse Produto
+
+        System.out.println("Data de Validade: " + validade[0] + "-" + validade[1] + "-" + validade[2]);
+
+        if (estaVencido()) {
+            System.out.println("\nProduto vencido.");
+        } else {
+            System.out.println("Produto não esta vencido.");
+        }
+    }
+
+    public void aplicarDesconto() {
+        // Aplica desconto de 15% ao produto
+        if(!estaVencido()){
+        double novoValor = getValor() * 0.85;
+        System.out.println("\nO valor após o desconto de 15%: R$"+ novoValor);
+        setValor(novoValor);
+        } else
+         System.out.println("Não há descontos para produtos fora da validade!");
+        
     }
 }
